@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - ANI NIVRA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="video-bg">
+        <video autoplay loop muted playsinline>
+            <source src="ssstik.io_@primezojo_1776685645486.mp4" type="video/mp4">
+            Browser kamu tidak mendukung video background.
+        </video>
+        <div class="overlay"></div>
+    </div>
+     
+    <div class="profile-container">
+        <div class="banner">
+    <video autoplay loop muted playsinline class="banner-video">
+        <source src="ssstik.io_@primezojo_1776685645486.mp4" type="video/mp4">
+    </video>
+</div>
+
+        <div class="profile-header">
+            <div class="avatar-wrapper">
+                <img src="Knight - Guardian Tales.jpg" alt="ANI NIVRA Avatar" class="avatar">
+            </div>
+            
+            <div class="profile-info">
+                <h1>EL KNEK</h1>
+                <p class="handle">@M.Arvin.Tan.Gibran • 15 age • SMP CLASS 9</p>
+                <p class="bio">KNEK WAS READY,PROJEK STROM FOR MY OWNER M.A.T.G</p>
+                <a href="https://sociabuzz.com/elknekez0/tribe" target="_blank" style="text-decoration: none;">
+    <button class="btn-subscribe">Subscribe</button>
+</a>
+            </div>
+        </div>
+
+        <nav class="profile-nav">
+    <ul>
+        <li id="navBeranda" class="nav-item active">Beranda</li> <li id="navMusic" class="nav-item">music favorite</li>
+        <li id="navShorts" class="nav-item">video</li> <li id="navPlaylist" class="nav-item">foto</li>
+    </ul>
+</nav>
+
+ <div id="contentPlaylist" class="tab-content" style="display: none;">
+    <div class="photo-gallery">
+        <img src="foto1.jpg" class="photo-item" onclick="openLightbox(0)">
+        <img src="foto2.jpg" class="photo-item" onclick="openLightbox(1)">
+        <img src="foto3.jpg" class="photo-item" onclick="openLightbox(2)">
+    </div>
+</div>
+
+<div id="lightbox" class="lightbox">
+    <span onclick="this.parentElement.style.display='none'" style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+    <img id="lightbox-img" class="lightbox-content">
+    <div class="lightbox-controls">
+        <button class="btn-ctrl" onclick="changeSlide(-1)">Prev</button>
+        <button class="btn-ctrl" onclick="changeSlide(1)">Next</button>
+    </div>
+</div>
+
+<div id="contentBeranda" class="tab-content">
+    <p style="padding: 20px 20px 10px 20px; color: #aaa;">Selamat datang di beranda EL KNEK!</p>
+    
+    <div class="social-bar" style="text-align: center; margin-bottom: 20px;">
+        <a href="https://tiktok.com/@username_mu" target="_blank" class="social-icon tiktok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://instagram.com/username_mu" target="_blank" class="social-icon instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/nomor_wa_mu" target="_blank" class="social-icon whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <div class="info-box" style="text-align: left; padding: 0 20px;">
+        <pre style="text-align: left; margin: 0; font-family: monospace; white-space: pre-wrap;">
+┏───────────────┈ 
+┆    「 *`[INFORMASI]`* 」
+┣───────────────┈ 
+┣──=[ *`[ M.Arvin.T.G ]`* ]==─
+┆ • SEKOLAH: SMPN 08 MUKOMUKO
+┆ • KELAS: 9
+┆ • TTL: KARANG JAYA, 7 MEI 2010
+┆ • LOVERS: ??
+┆ • JOB: JB, CONTENT CREATOR, PROGRAMMER
+└────────────┈ ⳹
+        </pre>
+    </div>
+</div>
+
+<div id="contentMusic" class="tab-content" style="display: none;">
+    <div class="music-player-wrapper">
+        <div class="spotify-card musicBtn">
+    <img src="bestfrend.png" class="spotify-img">
+    <div class="play-overlay"><span>▶</span></div>
+    
+    <audio src="bestfrend.mp3"></audio> </div>
+    <p>Rex Orange County - Best Friend</p>
+</div><div class="music-player-wrapper">
+    <div class="spotify-card musicBtn">
+        <img src="television.png" class="spotify-img"> <div class="play-overlay"><span>▶</span></div>
+        <audio src="television.mp3"></audio> </div>
+    <p> Rex Orange County - Television</p>
+</div><div class="music-player-wrapper">
+    <div class="spotify-card musicBtn">
+        <img src="happynes.png" class="spotify-img"> <div class="play-overlay"><span>▶</span></div>
+        <audio src="happynes.mp3"></audio> </div>
+    <p> Rex Orange County - Happiness</p>
+</div><div class="music-player-wrapper">
+    <div class="spotify-card musicBtn">
+        <img src="tarot.png" class="spotify-img"> <div class="play-overlay"><span>▶</span></div>
+        <audio src="tarot.mp3"></audio> </div>
+    <p> Feast - Tarot</p>
+</div><div class="music-player-wrapper">
+    <div class="spotify-card musicBtn">
+        <img src="nina.png" class="spotify-img"> <div class="play-overlay"><span>▶</span></div>
+        <audio src="nina.mp3"></audio> </div>
+    <p> Feast - Nina</p>
+</div>
+</div>
+<div id="contentShorts" class="tab-content" style="display: none;">
+    <div class="video-gallery">
+        <div class="video-item">
+            <video controls>
+                <source src="video_kamu.mp4" type="video/mp4">
+                Browser tidak mendukung video.
+            </video>
+            <div class="video-desc">
+                <h3>Judul Video Pertama</h3>
+                <p>Deskripsi video ini akan muncul di sini agar lebih informatif.</p>
+                <small class="upload-date">📅 Diunggah: 24 April 2026</small>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video controls>
+                <source src="video_kamu.mp4" type="video/mp4">
+                Browser tidak mendukung video.
+            </video>
+            <div class="video-desc">
+                <h3>Judul Video Kedua</h3>
+                <p>Jarak antara video ini dan di atasnya sekarang sudah lebih lega.</p>
+                <small class="upload-date">📅 Diunggah: 25 April 2026</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <hr class="divider">
+    </div>
+   
+    <script>
+    // 1. Ambil semua elemen Nav & Konten
+const tabs = {
+    'navBeranda': 'contentBeranda',
+    'navMusic': 'contentMusic',
+    'navShorts': 'contentShorts',
+    'navPlaylist': 'contentPlaylist'
+};
+
+// 2. Fungsi Utama Pindah Tab
+Object.keys(tabs).forEach(navId => {
+    document.getElementById(navId).addEventListener('click', function() {
+        // Matikan semua lagu dulu
+        stopAllAudio();
+
+        // Hapus class 'active' dari semua li
+        Object.keys(tabs).forEach(id => {
+            document.getElementById(id).classList.remove('active');
+            document.getElementById(tabs[id]).style.display = 'none';
+        });
+
+        // Aktifkan tab yang diklik
+        this.classList.add('active');
+        document.getElementById(tabs[navId]).style.display = 'block';
+    });
+});
+
+// Fungsi pembantu stop audio
+function stopAllAudio() {
+    document.querySelectorAll("audio").forEach(song => {
+        song.pause();
+        const icon = song.parentElement.querySelector("span");
+        if(icon) icon.innerHTML = "▶";
+    });
+}
+
+// 3. Logika Lightbox Foto (Slider)
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const photos = document.querySelectorAll(".photo-item");
+let currentPhotoIndex = 0;
+
+function openLightbox(index) {
+    currentPhotoIndex = index;
+    lightboxImg.src = photos[currentPhotoIndex].src;
+    lightbox.style.display = "flex";
+}
+
+function closeLightbox() {
+    lightbox.style.display = "none";
+}
+
+function changeSlide(direction) {
+    currentPhotoIndex += direction;
+    if (currentPhotoIndex >= photos.length) currentPhotoIndex = 0;
+    if (currentPhotoIndex < 0) currentPhotoIndex = photos.length - 1;
+    lightboxImg.src = photos[currentPhotoIndex].src;
+}
+
+// 4. Logika Musik (Tetap dipertahankan)
+document.querySelectorAll(".musicBtn").forEach(btn => {
+    btn.addEventListener("click", function() {
+        const song = this.querySelector("audio");
+        const icon = this.querySelector("span");
+
+        document.querySelectorAll("audio").forEach(other => {
+            if (other !== song) {
+                other.pause();
+                if(other.parentElement.querySelector("span")) {
+                    other.parentElement.querySelector("span").innerHTML = "▶";
+                }
+            }
+        });
+
+        if (song.paused) {
+            song.play().then(() => { icon.innerHTML = "⏸"; });
+        } else {
+            song.pause();
+            icon.innerHTML = "▶";
+        }
+    });
+});
+</script>
+<div id="intro-overlay">
+    <div class="intro-content">
+        <video id="intro-video" playsinline autoplay muted>
+            <source src="intro.mp4" type="video/mp4">
+        </video>
+        <audio id="intro-audio" src="intro.mp4"></audio>
+    </div>
+</div>
+<script>const introOverlay = document.getElementById('intro-overlay');
+const introVideo = document.getElementById('intro-video');
+const introAudio = document.getElementById('intro-audio');
+
+window.onload = function() {
+    // Jalankan video & audio barengan
+    introVideo.play();
+    introAudio.play().catch(() => {
+        console.log("Browser masih nge-block suara otomatis...");
+    });
+};
+
+// Pas video habis, semuanya hilang
+introVideo.onended = function() {
+    introOverlay.style.opacity = '0';
+    setTimeout(() => {
+        introOverlay.style.display = 'none';
+        introAudio.pause();
+    }, 1000);
+};
+</script>
+</script>
+<script>// Ambil elemen navigasi foto
+const navPlaylist = document.getElementById("navPlaylist");
+const contentPlaylist = document.getElementById("contentPlaylist");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+let currentPhotoIndex = 0;
+const photos = document.querySelectorAll(".photo-item");
+
+// Navigasi ke Tab Foto
+navPlaylist.onclick = function() {
+    // Reset active class
+    [navBeranda, navMusic, navShorts, navPlaylist].forEach(el => el.classList.remove("active"));
+    navPlaylist.classList.add("active");
+
+    // Tampilkan hanya tab foto
+    contentBeranda.style.display = "none";
+    contentMusic.style.display = "none";
+    contentShorts.style.display = "none";
+    contentPlaylist.style.display = "block";
+    
+    stopAllAudio();
+};
+
+// Fungsi membesarkan foto
+function openLightbox(index) {
+    currentPhotoIndex = index;
+    lightboxImg.src = photos[currentPhotoIndex].src;
+    lightbox.style.display = "flex";
+}
+
+function closeLightbox() {
+    lightbox.style.display = "none";
+}
+
+function changeSlide(direction) {
+    currentPhotoIndex += direction;
+    
+    // Loop balik ke awal/akhir
+    if (currentPhotoIndex >= photos.length) currentPhotoIndex = 0;
+    if (currentPhotoIndex < 0) currentPhotoIndex = photos.length - 1;
+    
+    lightboxImg.src = photos[currentPhotoIndex].src;
+}
+
+// Tambahan: Pastikan saat klik tab lain, tab foto sembunyi
+const oldNavBeranda = navBeranda.onclick;
+navBeranda.onclick = function() {
+    oldNavBeranda();
+    contentPlaylist.style.display = "none";
+};
+
+const oldNavMusic = navMusic.onclick;
+navMusic.onclick = function() {
+    oldNavMusic();
+    contentPlaylist.style.display = "none";
+};
+
+const oldNavShorts = navShorts.onclick;
+navShorts.onclick = function() {
+    oldNavShorts();
+    contentPlaylist.style.display = "none";
+};</script>
+</body>
+</html>
