@@ -1,0 +1,513 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* --- VIDEO BACKGROUND STYLE --- */
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Supaya di belakang konten */
+    overflow: hidden;
+}
+
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar video memenuhi layar tanpa gepeng */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Gelapkan video dikit biar teks kebaca */
+}
+
+/* --- KONTEN PROFIL --- */
+.profile-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: rgba(15, 15, 15, 0.85); /* Agak transparan biar video kelihatan dikit */
+    border: 3px solid #8a2be2; /* Border Ungu */
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(5px); /* Efek blur di belakang container */
+    z-index: 1;
+}
+
+.banner {
+    height: 180px;
+    position: relative;
+    overflow: hidden; /* Supaya video gak keluar jalur */
+    border-bottom: 2px solid #8a2be2; /* Garis pembatas bawah banner */
+}
+
+.banner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Biar video pas menutupi kotak banner */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.profile-header {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    margin-top: -60px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #8a2be2;
+    background-color: #333;
+}
+
+.btn-subscribe {
+    margin-top: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-subscribe:hover {
+    background-color: #8a2be2;
+    color: white;
+    box-shadow: 0 0 15px #8a2be2; /* Efek neon ungu saat di-hover */
+}
+
+.profile-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 10px 20px;
+    gap: 25px;
+}
+
+.profile-nav li {
+    color: #aaaaaa;
+    cursor: pointer;
+}
+
+.profile-nav li.active {
+    color: white;
+    border-bottom: 2px solid white;
+}
+.music-player-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spotify-card {
+    position: relative;
+    width: 250px; /* Sesuaikan ukuran foto */
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #8a2be2;
+    transition: 0.3s;
+}
+
+.spotify-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+}
+
+.spotify-img {
+    width: 100%;
+    display: block;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Sembunyi sebelum di-hover */
+    transition: 0.3s;
+}
+
+.spotify-card:hover .play-overlay {
+    opacity: 1;
+}
+
+#playIcon {
+    font-size: 40px;
+    color: white;
+}
+.music-hidden-section {
+    display: none; /* Sembunyi secara default */
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    width: 100%;
+}
+
+/* Biar munculnya smooth */
+.music-show {
+    display: flex !important;
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sisa CSS spotify-card dan play-overlay pakai yang sebelumnya ya */
+.nav-item {
+    cursor: pointer;
+    transition: 0.3s;
+    padding-bottom: 5px;
+}
+
+.nav-item.active {
+    color: white;
+    border-bottom: 2px solid #8a2be2; /* Garis bawah ungu kalau aktif */
+}
+
+.tab-content {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.music-player-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+}
+.social-bar {
+    display: flex;
+    justify-content: flex-start; /* Sejajar ke kiri, ganti 'center' kalau mau di tengah */
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: #aaaaaa; /* Warna asli abu-abu */
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+/* Efek warna pas di-hover (disentuh kursor) */
+.social-icon.tiktok:hover {
+    color: #ff0050; /* Warna khas TikTok */
+    text-shadow: 0 0 10px #ff0050;
+}
+
+.social-icon.instagram:hover {
+    color: #e1306c; /* Warna khas IG */
+    text-shadow: 0 0 10px #e1306c;
+}
+
+.social-icon.whatsapp:hover {
+    color: #25d366; /* Warna khas WA */
+    text-shadow: 0 0 10px #25d366;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px); /* Efek icon naik dikit */
+}
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
+}
+
+.intro-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro-video {
+    /* Menjaga video tetap proporsional */
+    max-width: 100%;
+    max-height: 90vh; /* Maksimal tinggi 90% dari layar, jadi gak bakal tenggelam */
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+    object-fit: contain; /* Biar video gak kepotong */
+}
+.info-box {
+    margin: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05); /* Background tipis transparan */
+    border-radius: 10px;
+    border-left: 3px solid #00ffcc; /* Kasih garis hiasan di samping (warna ijo toska kesukaanmu) */
+}
+
+.info-box pre {
+    color: #00ffcc; /* Warna teks ijo toska biar matching */
+    font-family: 'Courier New', Courier, monospace; /* Font mesin ketik biar rapi */
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: pre-wrap; /* Biar kalau di HP teksnya gak kepotong keluar layar */
+}
+.video-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.video-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+.video-item video {
+    width: 100%;
+    display: block;
+}
+
+.video-desc {
+    padding: 15px;
+}
+
+.video-desc h3 {
+    color: #00ffcc; /* Ijo toska kesukaanmu */
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.video-desc p {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.upload-date {
+    font-size: 12px;
+    color: #888;
+}
+/* Container utama gallery video */
+.video-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Ini yang kasih jarak antar video */
+    padding: 20px;
+}
+
+/* Kotak pembungkus tiap video */
+.video-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    /* Border hijau toska kesukaanmu */
+    border: 2px solid #00ffcc; 
+    transition: 0.3s ease;
+}
+
+/* Efek sedikit bercahaya saat kursor di atas video */
+.video-item:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+    transform: translateY(-3px);
+}
+
+.video-item video {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.2); /* Garis tipis bawah video */
+}
+
+.video-desc {
+    padding: 15px;
+    text-align: left;
+}
+
+.video-desc h3 {
+    color: #00ffcc; /* Judul pakai hijau toska */
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+}
+
+.video-desc p {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.upload-date {
+    display: block;
+    color: #888;
+    font-size: 12px;
+}
+/* --- GALLERY FOTO --- */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.photo-item {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 3px solid #00ffcc; /* Border Hijau Toska */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+}
+
+/* --- LIGHTBOX (MODAL FOTO) --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80vh;
+    border: 4px solid #00ffcc;
+    border-radius: 10px;
+}
+
+.lightbox-controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.btn-control {
+    background: #8a2be2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+/* Styling Galeri Foto */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.photo-item {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 3px solid #00ffcc; /* Border hijau toska */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+/* Lightbox / Foto Membesar */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80vh;
+    border: 4px solid #00ffcc;
+    border-radius: 10px;
+}
+
+.lightbox-controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-ctrl {
+    background: #8a2be2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
