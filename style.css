@@ -247,7 +247,12 @@ body {
     color: #25d366; /* Warna khas WA */
     text-shadow: 0 0 10px #25d366;
 }
+}
 
+.social-icon.facebook:hover {
+    color: #87CEEB; /* Warna khas FB */
+    text-shadow: 0 0 10px #25d366;
+}
 .social-icon:hover {
     transform: translateY(-5px); /* Efek icon naik dikit */
 }
