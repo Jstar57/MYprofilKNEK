@@ -251,7 +251,7 @@ body {
 
 .social-icon.facebook:hover {
     color: #87CEEB; /* Warna khas FB */
-    text-shadow: 0 0 10px #25d366;
+    text-shadow: 0 0 10px #87CEEB;
 }
 .social-icon:hover {
     transform: translateY(-5px); /* Efek icon naik dikit */
